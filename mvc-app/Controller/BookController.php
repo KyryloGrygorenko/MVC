@@ -2,9 +2,13 @@
 
 class BookController extends Controller
 {
-    public function indexAction()
+    public function indexAction($route)
     {
-        return $this->render('index.phtml');    
+        //return $this->render('index.phtml',);    old version using non static render() 
+        
+        
+        //using static method. Providing parameter $route to static method
+        return $this->render('index.phtml',$route);
     }
     
     public function showAction()

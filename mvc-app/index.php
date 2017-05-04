@@ -41,7 +41,10 @@ if (!method_exists($controller, $action)) {
     throw new Exception("{$action} not found");
 }  
 
-$content = $controller->$action();
+//$content = $controller->$action($route); old version using non static render()
+
+//using static method. Providing parameter $route to static method
+$content = $controller->$action($route);
 
 require VIEW_DIR . 'layout.phtml';
 
